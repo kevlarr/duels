@@ -1,0 +1,6 @@
+{{#link-to "books.book" book}}
+  <h2>{{book.title}}</h2>
+{{/link-to}}
+<h3>{{book.author}}</h3>
+<p>{{truncate book.description "150"}}...</p>
+<span>({{book.reviewScore}})</span>

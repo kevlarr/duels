@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="../css/book-details.component.css" />
+
+<div id="book-details">
+  <div *ngIf="book" id="book">
+    <h2 class="title">{{ book.book.title }}</h2>
+    <h3 class="author">by {{ book.book.author }}</h3>
+    <p class="description">{{ book.book.description }}</p>
+  </div>
+
+  <a [routerLink]="['Books']" class="button">&larr; Back</a>
+</div>

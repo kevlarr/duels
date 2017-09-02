@@ -1,0 +1,17 @@
+development:
+ adapter: postgresql
+ encoding: unicode
+ database: duels_development
+ pool: 5
+ username:
+ password:
+ host: 127.0.0.1
+
+test:
+ adapter: postgresql
+ encoding: unicode
+ database: duels_test
+ pool: 5
+ username:
+ password:
+ host: 127.0.0.1

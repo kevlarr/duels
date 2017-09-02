@@ -1,0 +1,9 @@
+<label>Title</label>
+{{input value=filter key-up=(action 'autoComplete' filter)}}
+<button {{action 'search'}}>Search</button>
+
+<ul>
+  {{#each filteredList as |book|}}
+    <li {{action 'choose' book.title}}>{{book.title}}</li>
+  {{/each}}
+</ul>

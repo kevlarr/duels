@@ -1,0 +1,9 @@
+{{#link-to 'index'}}&larr; Back to Books{{/link-to}}
+
+<div>
+  <h1>{{model.title}}</h1>
+  <h2>{{model.author}}</h2>
+  <p>{{model.description}}</p>
+</div>
+
+{{review-listings reviews=model.reviews}}

@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  background: #477ac2;
+  border-radius: 15px;
+  -ms-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  color: #fff;
+  display: inline-block;
+  padding: 1rem;
+}
+
+.button:hover {
+  background: #325d95;
+}
+
+a.button {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.button,
+button.button {
+  font-size: 12pt;
+}

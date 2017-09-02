@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="../css/book-list.component.css" />
+
+<div id="book-list">
+  <h2>Books</h2>
+
+  <ul id="book-list">
+    <li *ngFor="#book of books" class="book">
+      <a [routerLink]="['Book', {'id': book.book.id}]">
+        <h3 class="title">{{ book.book.title }}</h3>
+        <p class="author">{{ book.book.author }}</p>
+        <p *ngIf=[book.description] class="description">
+          {{ book.book.description.slice(0, 100) }}...
+        </p>
+        <span class="rating">({{ book.review_score }})</span>
+      </a>
+    </li>
+  </ul>
+
+  <a [routerLink]="['NewBook']" class="button">Add A Book</a>
+</div>

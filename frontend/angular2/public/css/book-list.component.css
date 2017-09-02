@@ -1,0 +1,33 @@
+#book-list {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+#book-list a {
+  color: #000;
+  text-decoration: none;
+}
+
+#book-list a.button {
+  color: #fff;
+}
+
+#book-list h2 {
+  font-family: sans-serif;
+}
+
+#book-list ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+#book-list li {
+  padding: 10px;
+}
+
+#book-list .book:hover {
+  background: #ddd;
+  cursor: pointer;
+}

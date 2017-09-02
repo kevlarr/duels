@@ -1,0 +1,20 @@
+<h1>Books</h1>
+
+<div>
+  {{#link-to 'books.new'}}Add a Book{{/link-to}}
+</div>
+<div>
+  {{book-filter
+    filteredList=filteredList
+    autoComplete=(action 'autoComplete')
+    search=(action 'search')}}
+</div>
+<div>
+  <ul>
+    {{#each model as |book|}}
+      <li>
+        {{book-listing book=book}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

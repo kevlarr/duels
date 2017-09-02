@@ -1,0 +1,13 @@
+#book-details {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+#book-details #book {
+  text-align: left;
+}
+
+#book-details .title {
+  text-align: center;
+}

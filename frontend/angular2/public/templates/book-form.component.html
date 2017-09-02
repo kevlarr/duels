@@ -1,0 +1,55 @@
+<link rel="stylesheet" type="text/css" href="../css/book-form.component.css" />
+
+<div id="book-form">
+  <div [hidden]="submitted">
+    <h2>Add A Book</h2>
+    <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input name="title" required
+          [(ngModel)]="book.title"
+          ngControl="title"
+          />
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input name="author" required
+          [(ngModel)]="book.author"
+          ngControl="author"
+          />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" rows="5" required
+          [(ngModel)]="book.description"
+          ngControl="description"
+          ></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="button"
+          [disabled]="!bookForm.form.valid"
+          >Submit</button>
+      </div>
+    </form>
+
+    <a [routerLink]="['Books']" class="button">&larr; Back</a>
+  </div>
+
+  <div [hidden]="!submitted" id="verification">
+    <h2>Is this correct?</h2>
+    <div class="info">
+      <p>Title:</p>
+      <p>{{ book.title }}</p>
+      <p>Author:</p>
+      <p>{{ book.author }}</p>
+      <p>Description:</p>
+      <p>{{ book.description }}</p>
+    </div>
+    <button class="button" (click)="submitted=false">No</button>
+    <button class="button" (click)="postBook()">Yes</button>
+  </div>
+
+</div>

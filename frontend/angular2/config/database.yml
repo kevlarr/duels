@@ -1,0 +1,12 @@
+development: &default
+  adapter: postgresql
+  encoding: unicode
+  database: js_duels_backend_development
+  pool: 5
+  username:
+  password:
+  host: 127.0.0.1
+
+test:
+  <<: *default
+  database: js_duels_backend_test

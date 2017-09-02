@@ -1,0 +1,49 @@
+#book-form {
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+#book-form form {
+  padding: 1em;
+}
+
+#book-form label,
+#book-form input,
+#book-form textarea {
+  display: block;
+  text-align: left;
+}
+
+#book-form input {
+  height: 2em;
+}
+
+#book-form input,
+#book-form textarea {
+  width: 100%;
+}
+
+#book-form [required] {
+  border-left: 5px solid #999;
+}
+
+#book-form .ng-valid {
+  border-left: 5px solid #42a948;
+}
+
+#book-form .touched.ng-invalid {
+  border-left: 5px solid #a94442;
+}
+
+#book-form .form-group {
+  margin-bottom: 1.5em;
+}
+
+#book-form .verification {
+
+}
+
+#book-form #verification .info {
+  text-align: left;
+}

@@ -1,0 +1,37 @@
+{{#link-to 'index'}}&larr; Back to Books{{/link-to}}
+
+<div id='books-new'>
+  <h1>Add a Book</h1>
+  <form {{action 'createBook' on='submit'}}>
+    <!-- Place action on form, rather than button, so 'enter' key in field can submit -->
+
+    <div>
+      <label for='book-title'>Title</label>
+      {{input type='text' id='book-title' value=model.title}}
+    </div>
+
+    <div>
+      <label for='book-author'>Author</label>
+      {{input type='text' id='book-author' value=model.author}}
+    </div>
+
+    <div>
+      <label for='book-description'>Description</label>
+      {{textarea rows=5 type='text' id='book-description' value=model.description}}
+    </div>
+
+    {{#if model.errors}}
+      <div>
+        <ul>
+          {{#each model.errors as |error|}}
+          <li>{{error.message}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+
+    <div class='text-center'>
+      <button class='button'>Submit</button>
+    </div>
+  </form>
+</div>
