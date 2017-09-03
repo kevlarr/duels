@@ -1,7 +1,7 @@
 development:
  adapter: postgresql
  encoding: unicode
- database: duels_development
+ database: duels_development_sinatra
  pool: 5
  username:
  password:
@@ -10,7 +10,7 @@ development:
 test:
  adapter: postgresql
  encoding: unicode
- database: duels_test
+ database: duels_test_sinatra
  pool: 5
  username:
  password:
