@@ -17,8 +17,7 @@ get "/api/v1/books" do
   books = Book.order(:title).map do |book|
     {
       book: book,
-      review_score: book.average_review_score,
-      reviews: book.reviews
+      review_score: book.average_review_score
     }
   end
 
