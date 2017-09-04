@@ -1,0 +1,11 @@
+version: "3"
+services:
+  db:
+    image: postgres:9.6.5
+  server:
+    build: .
+    image: sinatra:1.0
+    ports:
+      - "4567:4567"
+    depends_on:
+      - db

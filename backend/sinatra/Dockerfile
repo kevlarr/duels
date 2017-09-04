@@ -1,19 +1,19 @@
 # Minimal Ruby/Sinatra image
-FROM ruby:2.3.4-alpine
+FROM ruby:2.4.1-slim-jessie
 MAINTAINER kevin larrabee
 
-# Install packages and clear APK cache
-RUN apk update && apk upgrade && apk add \
-  bash \
-  vim \
-  && rm -rf /var/cache/apk/*
+RUN apt-get update && apt-get install -y \
+  gcc \
+  libpq-dev \
+  make
 
-RUN adduser -S frankie
-COPY app /home/frankie/app
-RUN chmod a+rwx -R /home/frankie/app
-USER frankie
+# TODO:
+# clear cache
+# create user
+# login as user
 
-WORKDIR /home/frankie/app
+COPY ./app /sinatra/app
+WORKDIR /sinatra/app
+RUN touch Gemfile.lock && bundle install
 
-RUN bundle install
 CMD ["ruby", "server.rb", "-o", "0.0.0.0"]

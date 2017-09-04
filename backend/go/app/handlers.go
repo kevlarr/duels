@@ -25,7 +25,7 @@ func BookIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		},
 	}
 
-	w.Header().set("Content-Type", "application/json; charset=UTF-8")
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 
 	if err := json.NewEncoder(w).Encode(books); err != nil {

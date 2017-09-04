@@ -7,8 +7,7 @@ RUN apk update && apk upgrade && apk add \
 	&& go get github.com/julienschmidt/httprouter \
 	&& adduser -S korben
 
-COPY app /go/app
-WORKDIR /go/app
+WORKDIR /go/src/app
 RUN go build .
 
 USER korben
