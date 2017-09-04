@@ -8,7 +8,7 @@ import (
 )
 
 func Root(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	fmt.Fprint(w, "Hello, says Go!\n")
+	fmt.Fprint(w, "Hello, from Go!\n")
 }
 
 func BookIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -25,7 +25,12 @@ func BookIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		},
 	}
 
-	json.NewEncoder(w).Encode(books)
+	w.Header().set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+
+	if err := json.NewEncoder(w).Encode(books); err != nil {
+		panic(err)
+	}
 }
 
 func BookCreate(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
