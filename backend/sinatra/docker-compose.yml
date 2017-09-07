@@ -2,11 +2,13 @@ version: "3"
 services:
   db:
     image: postgres:9.6.5
+    restart: unless-stopped
   server:
     build: .
     image: kevinlarrabee/sinatra:0.5
+    restart: unless-stopped
     ports:
-      - "4567:4567"
+      - "8008:4567"
     volumes:
       - ./app:/sinatra/app
     depends_on:
