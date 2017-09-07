@@ -9,11 +9,14 @@ RUN apt-get update && apt-get install -y \
 
 # TODO:
 # clear cache
-# create user
-# login as user
 
-COPY ./app /sinatra/app
+RUN \
+  groupadd -r planetexpress && \
+  useradd --no-log-init -r -g planetexpress fry
+
+USER fry
+
+COPY app/entry.sh /sinatra/app/entry.sh
 WORKDIR /sinatra/app
-RUN touch Gemfile.lock && bundle install
-
-CMD ["ruby", "server.rb", "-o", "0.0.0.0"]
+ENTRYPOINT ["./entry.sh"]
+CMD ["bundle", "exec", "ruby", "server.rb", "-o", "0.0.0.0"]

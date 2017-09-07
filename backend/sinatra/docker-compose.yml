@@ -4,8 +4,10 @@ services:
     image: postgres:9.6.5
   server:
     build: .
-    image: sinatra:1.0
+    image: kevinlarrabee/sinatra:0.5
     ports:
       - "4567:4567"
+    volumes:
+      - ./app:/sinatra/app
     depends_on:
       - db
