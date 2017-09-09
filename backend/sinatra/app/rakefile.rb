@@ -1,2 +1,2 @@
-require "bundler/setup"
+require "./server"
 require "sinatra/activerecord/rake"

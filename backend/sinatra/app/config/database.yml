@@ -3,15 +3,15 @@ development:
  encoding: unicode
  database: duels_development_sinatra
  pool: 5
- username:
+ username: postgres
  password:
- host: 127.0.0.1
+ host: sinatra_db_1
 
 test:
  adapter: postgresql
  encoding: unicode
  database: duels_test_sinatra
  pool: 5
- username:
+ username: postgres
  password:
- host: 127.0.0.1
+ host: sinatra_db_1
