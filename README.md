@@ -7,10 +7,26 @@ evaluating different frontend frameworks and backend languages. For instance...
 - All backend apps must provide an API that connects to a PostgreSQL database
 
 The ulterior purpose, however, is to act as an opportunity to better understand
-containerization and isolation in the development environment. The goals here are...
+**containerization** and isolation in the development environment.
+The main goals here are...
 
-- To better understand container- and service-oriented workflows
-- Each project to have its own image with necessary languages, build tools, and runtimes
-- Application code to be mounted as a volume during runtime rather than copied during build
-- Dependencies stored in the shared application volume on host so they are cached between containers...
-- ... but are installed and managed by the container itself to avoid needing tools on host
+- To use container- and service-oriented workflows to avoid polluting host with new tools
+- For each project to have its own minimalist image with necessary languages, build tools, and runtimes
+
+## Code sharing and dependencies
+
+The two common approaches I have seen involve either...
+
+1. Baking the application code and dependencies into the image during build, or..
+2. Storing code and dependencies on host system and sharing as a volume during runtime
+
+The first would be a viable option for production,
+but I would prefer not to have to rebuild images on any code change in development.
+Likewise, the latter seems preferable for development,
+but it would often require having dependency management tools on the host,
+which went against my goal of isolating tools.
+
+Each container therefore manages the dependencies it needs at runtime via an entry script,
+but they store them on the host volume.
+This way, dependencies do not depend on the existence of the container,
+but they require no tooling present on the host and a simple restart is enough to fetch any new deps.
