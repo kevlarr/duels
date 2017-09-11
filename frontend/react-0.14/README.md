@@ -1,6 +1,4 @@
-# React Books
-
-(Part 3 of JS comparisons)
+# React 0.14 [2016-02]
 
 ## Functionality
 

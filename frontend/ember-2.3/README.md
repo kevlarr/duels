@@ -1,6 +1,4 @@
-# Ember 2.3.0 Book Reviews
-
-(Part 2 of JS comparisons)
+# Ember 2.3 [2016-02]
 
 Single page application approach using Ember on top of a Sinatra backend for a basic CRUD app.
 

@@ -1,6 +1,4 @@
-#Angular Book Reviews
-
-(Part 1 of JS comparisons)
+# Angular 2 [2016/02]
 
 Single page application approach using Angular 2 (beta2.0) on top of a Sinatra backend for a basic CRUD app.
 
