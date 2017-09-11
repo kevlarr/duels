@@ -4,14 +4,13 @@ services:
     image: postgres:9.6.5
     restart: unless-stopped
     volumes:
-    - ./database:/var/lib/postgresql/data
+      - ./database:/var/lib/postgresql/data
 
   server:
-    build: .
-    image: kevinlarrabee/sinatra:0.5
+    image: kevinlarrabee/sinatra:1.0
     restart: unless-stopped
     ports:
-      - "8008:4567"
+      - "1337:4567"
     volumes:
       - ./app:/sinatra/app
     depends_on:
