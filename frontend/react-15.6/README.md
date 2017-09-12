@@ -1,5 +1,7 @@
 # React 0.14 [2016-02]
 
+**Updated to 15.6.0 [2017-09] as part of containerization**
+
 ## Functionality
 
 `book-list`
