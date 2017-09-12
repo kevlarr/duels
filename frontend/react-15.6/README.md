@@ -2,6 +2,14 @@
 
 **Updated to 15.6.0 [2017-09] as part of containerization**
 
+## TODO
+
+- [ ] Improve `bundle.js` size
+- [ ] Set up basic server
+- [ ] Proxy API calls
+
+
+# OLD README
 ## Functionality
 
 `book-list`
