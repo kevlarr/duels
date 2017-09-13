@@ -1,0 +1,24 @@
+{
+  "name": "react-book-reviews",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevlarr/react-books.git"
+  },
+  "author": "kevlarr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevlarr/react-books/issues"
+  },
+  "homepage": "https://github.com/kevlarr/react-books#readme",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0"
+  }
+}
