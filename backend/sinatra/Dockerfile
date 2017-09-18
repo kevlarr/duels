@@ -1,4 +1,3 @@
-# Minimal Ruby/Sinatra image
 FROM ruby:2.4.1-slim-jessie
 MAINTAINER kevin larrabee
 

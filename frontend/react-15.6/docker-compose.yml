@@ -1,0 +1,10 @@
+version: "3"
+# TODO: Add "watcher" service to build project on file changes
+services:
+  server:
+    image: kevinlarrabee/react:0.5
+    restart: unless-stopped
+    ports:
+      - "1337:8080"
+    volumes:
+      - ./app:/app
