@@ -1,6 +1,11 @@
 version: "3"
 # TODO: Add "watcher" service to build project on file changes
 services:
+  watch:
+    image: kevinlarrabee/react-build:1.0
+    build:
+      context: ./app
+      dockerfile: DockerfileWatch
   server:
     image: kevinlarrabee/react:0.5
     restart: unless-stopped
@@ -8,3 +13,5 @@ services:
       - "1337:8080"
     volumes:
       - ./app:/app
+    depends_on:
+      - watch
