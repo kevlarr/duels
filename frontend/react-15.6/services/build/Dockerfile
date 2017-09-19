@@ -1,3 +1,4 @@
+# Package manager and build pipeline
 FROM node:8.4-alpine
 MAINTAINER kevin larrabee
 
@@ -14,4 +15,4 @@ WORKDIR /app
 
 ENTRYPOINT ["./entry.sh"]
 
-CMD ["node_modules/.bin/http-server"]
+CMD ["npm", "run", "build", "--", "--watch"]
